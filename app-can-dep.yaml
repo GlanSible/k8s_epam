@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-can
+  namespace: webapp-can
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-can
+  template:
+    metadata:
+      name: webapp-can
+      labels:
+        app: webapp-can
+    spec:
+      containers:
+      - name: webapp
+        image: kodekloud/webapp-color:v2

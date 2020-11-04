@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-prod
+  namespace: webapp-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp-prod
+  template:
+    metadata:
+      name: webapp-prod
+      labels:
+        app: webapp-prod
+    spec:
+      containers:
+      - name: webapp
+        image: kodekloud/webapp-color:v1

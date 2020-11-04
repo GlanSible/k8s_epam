@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-webapp
+  namespace: webapp-prod
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: webapp.epam
+    http:
+      paths:
+#        path: /
+        - backend:
+            serviceName: webapp-prod
+            servicePort: 8080
