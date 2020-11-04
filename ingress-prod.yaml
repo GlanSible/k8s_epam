@@ -10,7 +10,7 @@ spec:
   - host: webapp.epam
     http:
       paths:
-#        path: /
+        path: /
         - backend:
             serviceName: webapp-prod
             servicePort: 8080
